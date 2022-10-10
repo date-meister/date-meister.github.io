@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title>My First Web Page</title>
+    <script type="module" src="elements.js"></script>
+</head>
+
+<body>
+    <full-date></full-date>
+    <day-clock></day-clock>
+    <days-to-new-year></days-to-new-year>
+    <day-count to="1/1/2023"></day-count>
+
+    <script>
+        //days to new year
+        customElements.define('days-to-new-year', class extends HTMLElement {
+            constructor() {
+                super();
+                this.attachShadow({ mode: 'open' });
+                this.shadowRoot.innerHTML = `<p>Days to new year: ${this.daysToNewYear()}</p>`;
+            }
+            daysToNewYear() {
+                const today = new Date();
+                const newYear = new Date(today.getFullYear() + 1, 0, 1);
+                const daysToNewYear = Math.round((newYear - today) / (1000 * 60 * 60 * 24));
+                return daysToNewYear;
+            }
+        });
+    </script>
+</body>
+
+</html>
