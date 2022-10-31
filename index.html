@@ -15,9 +15,9 @@
         //days to new year
         customElements.define('days-to-new-year', class extends HTMLElement {
             constructor() {
-                super();
-                this.attachShadow({ mode: 'open' });
-                this.shadowRoot.innerHTML = `<p>Days to new year: ${this.daysToNewYear()}</p>`;
+                super()
+                    .attachShadow({ mode: 'open' })
+                    .innerHTML = `<p>Days to new year: ${this.daysToNewYear()}</p>`;
             }
             daysToNewYear() {
                 const today = new Date();
