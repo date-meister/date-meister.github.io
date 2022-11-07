@@ -50,7 +50,7 @@ console.log(
   dayClock(navigator.language, true),
   "\n",
   named(cmp_count),
-  dayCount(document.body)
+  //dayCount(document.body)
 );
 // ================================================================
 class DateComponentClass extends HTMLElement {
